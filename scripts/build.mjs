@@ -1,0 +1,4 @@
+import {readFile,writeFile,mkdir,readdir,rm} from 'node:fs/promises';
+const types={html:'text/html; charset=utf-8',js:'text/javascript; charset=utf-8',css:'text/css; charset=utf-8',jpg:'image/jpeg',png:'image/png',svg:'image/svg+xml'};const assets={};
+async function walk(dir){for(const f of await readdir(dir,{withFileTypes:true})){const p=dir+'/'+f.name;if(f.isDirectory())await walk(p);else assets[p.slice(6)]={type:types[f.name.split('.').pop()]||'application/octet-stream',body:(await readFile(p)).toString('base64')}}}
+await walk('public');await rm('dist',{recursive:true,force:true});await mkdir('dist/server',{recursive:true});const source=await readFile('server/worker.js','utf8');await writeFile('dist/server/index.js',source.replace('__ASSET_MAP__',JSON.stringify(assets)));console.log('Built authenticated Worker with '+Object.keys(assets).length+' protected assets.');

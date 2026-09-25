@@ -1,0 +1,1 @@
+{"name":"the-ultra-of-us","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","db:generate":"drizzle-kit generate","test":"node --test tests/server.test.mjs","dev":"node scripts/dev.mjs"},"devDependencies":{"drizzle-kit":"^0.31.0","drizzle-orm":"^0.44.0"}}
