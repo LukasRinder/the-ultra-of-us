@@ -1,6 +1,6 @@
 # The Ultra of Us
 
-A wedding adventure website for Christoph and Ari: seven challenges, an immediately earned marriage badge, activity photo or Strava-link submissions, and WebGL badge celebrations.
+A wedding adventure website for Christoph and Ari: eight challenges, an immediately earned marriage badge, activity photo or Strava-link submissions, and WebGL badge celebrations.
 
 ## Run locally
 
@@ -27,7 +27,7 @@ Video fields accept browser-playable video file URLs (not YouTube page URLs). Gi
 
 ## Current behavior and limits
 
-- The marriage badge is already earned. Each of the seven challenge badges requires an activity photo or a supported Strava activity URL.
+- The marriage badge is already earned. Each of the eight challenge badges requires an activity photo or a supported Strava activity URL.
 - Strava URL format is checked; the app does not verify activity ownership, content or existence.
 - Completion is stored in localStorage; submitted photos/links are stored in IndexedDB. There is no shared database, upload server or cross-device sync. Clearing browser data removes these records.
 - Selected photos are resized in the browser and saved as JPEG. Unsupported image formats show an error.
